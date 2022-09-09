@@ -1,12 +1,13 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
-import "@rainbow-me/rainbowkit/style.css";
+import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from "wagmi/providers/public";
 
 const alchemyId = process.env.API_URL;
+const provider = process.env.TESTNET_EXPLORER_URL;
 
 const { chains, providers } = configureChains(
   [chain.polygon],
